@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>观音山社区碳汇经济平台</title>
+    <style>
+        :root {
+            --primary-color: #e0f7e0;
+            --secondary-color: #a8e6a8;
+            --accent-color: #66bb6a;
+            --text-color: #2e7d32;
+            --light-text: #f5f9f5;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+        }
+        
+        header {
+            background-color: var(--accent-color);
+            color: var(--light-text);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        nav {
+            background-color: var(--secondary-color);
+            padding: 15px 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav li {
+            margin: 0 20px;
+        }
+        
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #1b5e20;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('forest-background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text-color);
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            background-color: var(--accent-color);
+            color: var(--light-text);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #388e3c;
+        }
+        
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            width: 280px;
+            margin: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+        
+        .carbon-market {
+            background-color: var(--secondary-color);
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .carbon-market h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+        
+        .market-stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .stat {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px;
+            width: 200px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+        
+        /* 更新后的页脚样式 */
+        footer {
+            background-color: var(--accent-color);
+            color: var(--light-text);
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-column {
+            width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--light-text);
+            padding-bottom: 10px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: #c8e6c9;
+        }
+        
+        .contact-info {
+            margin-top: 15px;
+        }
+        
+        .contact-info p {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .social-media {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: rgba(255,255,255,0.3);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            margin-top: 30px;
+        }
+        
+        .quick-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .quick-links a {
+            margin: 0 15px;
+            color: var(--light-text);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">观音山碳汇经济</div>
+        <p>云南省首个社区碳汇交易平台</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">碳汇交易</a></li>
+            <li><a href="#">项目展示</a></li>
+            <li><a href="#">政策法规</a></li>
+            <li><a href="#">社区参与</a></li>
+            <li><a href="#">关于我们</a></li>
+        </ul>
+    </nav>
+    
+    <section class="hero">
+        <h1>守护绿水青山 共享碳汇经济</h1>
+        <p>观音山社区碳汇交易平台连接生态保护与经济发展，让每一片森林的价值得到充分体现，助力实现碳中和目标。</p>
+        <button class="btn">立即参与</button>
+    </section>
+    
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">🌳</div>
+            <h3>碳汇计量</h3>
+            <p>采用国际认可的碳汇计量方法学，精准测算森林碳汇量，确保数据真实可靠。</p>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h3>交易平台</h3>
+            <p>提供透明、公正的碳汇交易平台，连接碳汇供给方与需求方，实现价值转化。</p>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-icon">🏆</div>
+            <h3>生态补偿</h3>
+            <p>通过碳汇交易实现生态价值补偿，让保护生态的社区获得合理经济回报。</p>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>社区参与</h3>
+            <p>鼓励社区居民参与碳汇项目，共同守护家园生态，共享绿色发展成果。</p>
+        </div>
+    </section>
+    
+    <section class="carbon-market">
+        <h2>碳汇市场数据</h2>
+        <div class="market-stats">
+            <div class="stat">
+                <div class="stat-value">5,286</div>
+                <div>累计碳汇量(吨)</div>
+            </div>
+            
+            <div class="stat">
+                <div class="stat-value">328</div>
+                <div>参与农户(户)</div>
+            </div>
+            
+            <div class="stat">
+                <div class="stat-value">1.2M</div>
+                <div>交易金额(元)</div>
+            </div>
+            
+            <div class="stat">
+                <div class="stat-value">42</div>
+                <div>合作企业(家)</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 更新后的页脚 -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>关于我们</h3>
+                <p>观音山社区碳汇经济平台是云南省首个社区主导的碳汇交易平台，致力于将生态保护与经济发展相结合，推动绿色低碳发展。</p>
+                <div class="social-media">
+                    <a href="#" class="social-icon">微信</a>
+                    <a href="#" class="social-icon">微博</a>
+                    <a href="#" class="social-icon">抖音</a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="#">碳汇交易指南</a></li>
+                    <li><a href="#">项目申报流程</a></li>
+                    <li><a href="#">碳汇计量标准</a></li>
+                    <li><a href="#">社区参与方式</a></li>
+                    <li><a href="#">碳中和解决方案</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>政策法规</h3>
+                <ul>
+                    <li><a href="#">国家碳汇政策</a></li>
+                    <li><a href="#">云南省生态补偿条例</a></li>
+                    <li><a href="#">碳交易管理办法</a></li>
+                    <li><a href="#">社区碳汇项目规范</a></li>
+                    <li><a href="#">国际碳汇标准</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>联系我们</h3>
+                <div class="contact-info">
+                    <p><span class="contact-icon">📍</span> 云南省昆明市西山区观音山社区</p>
+                    <p><span class="contact-icon">📞</span> 0871-12345678</p>
+                    <p><span class="contact-icon">✉️</span> info@guanyinshan-carbon.com</p>
+                    <p><span class="contact-icon">🕒</span> 周一至周五 9:00-17:00</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2025 云南省观音山社区碳汇经济平台 Error Chtholly 版权所有 | 滇ICP备XXXXXXXX号</p>
+            <div class="quick-links">
+                <a href="#">隐私政策</a>
+                <a href="#">使用条款</a>
+                <a href="#">网站地图</a>
+                <a href="#">帮助中心</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
