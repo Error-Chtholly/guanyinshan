@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>碳索观音山 - 云南省观音山社区碳汇经济价值提升规划设计</title>
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #81c784;
+            --accent-color: #388e3c;
+            --text-color: #333;
+            --light-bg: #f1f8e9;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        nav {
+            background-color: var(--accent-color);
+            padding: 0.5rem 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .hero {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--primary-color);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid var(--secondary-color);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-color);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--secondary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: var(--white);
+            border: 4px solid var(--accent-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid var(--secondary-color);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent var(--secondary-color);
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid var(--secondary-color);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent var(--secondary-color) transparent transparent;
+        }
+
+        .right::after {
+            left: -12px;
+        }
+
+        .content {
+            padding: 20px 30px;
+            background-color: var(--white);
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::before {
+                left: 60px;
+                border: medium solid var(--secondary-color);
+                border-width: 10px 10px 10px 0;
+                border-color: transparent var(--secondary-color) transparent transparent;
+            }
+
+            .left::after,
+            .right::after {
+                left: 15px;
+            }
+
+            .right {
+                left: 0%;
+            }
+        }
+
+        /* 图片样式 */
+        .content-img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .img-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .img-caption {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">碳索观音山</div>
+        <p>云南省观音山社区碳汇经济价值提升规划设计</p>
+        <p>周泽同*，沈思仪，王洁，李珊，袁磊*</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">项目概况</a></li>
+            <li><a href="#technology">技术路线</a></li>
+            <li><a href="#results">研究成果</a></li>
+            <li><a href="#design">创新设计</a></li>
+            <li><a href="#benefits">预期效益</a></li>
+            <li><a href="#team">规划团队</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <h1>构建"生态保护-产业发展-社区受益"的良性循环</h1>
+            <p>系统构建"科学评估-产品开发-价值转化"的碳汇经济价值提升方案</p>
+            <a href="#about" class="btn">了解更多</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="about">
+            <h2>项目概况</h2>
+            <p>云南省昆明市西山区观音山社区地处滇池西岸，是以白族为主的民族聚居村落。社区以"山、水、林"为核心生态基底，森林覆盖率高达71.91%，拥有19853亩林地，据遥感估算其碳储量潜力约6万吨，年固碳量超2000吨。
+            </p>
+
+            <div class="img-container">
+                <img src="1.png" style="max-width:100%; margin:20px 0;">
+                <p class="img-caption">图1 研究区概况</p>
+            </div>
+
+            <p>当前全球气候治理已进入关键阶段，《巴黎协定》1.5℃控温目标持续强化，碳汇正从生态概念转化为可量化交易资产。我国明确提出"2030年前碳达峰、2060年前碳中和"的"双碳"发展目标。在此背景下，本项目以观音山社区为规划区，系统构建"科学评估-产品开发-价值转化"的碳汇经济价值提升方案。
+            </p>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>项目背景</h3>
+                    <p>观音山社区兼具森林、湿地双重碳汇优势，叠加滇池生态屏障区位，具备发展碳汇经济的天然优势。</p>
+                </div>
+                <div class="card">
+                    <h3>存在问题</h3>
+                    <p>发展模式同质化竞争、居民利益共享机制不完善、项目发展风险等问题亟待解决。</p>
+                </div>
+                <div class="card">
+                    <h3>规划目标</h3>
+                    <p>破解生态-发展矛盾、重塑社区产业结构、塑造碳汇经济发展典型示范。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="technology">
+            <h2>技术路线与方法</h2>
+            <p>本项目采用多学科交叉的研究方法，构建了"数据采集-模型分析-规划设计"的完整技术路线。</p>
+
+            <div class="img-container">
+                <img src="2.png" style="max-width:100%; margin:20px 0;">
+                <p class="img-caption">图2 总体技术路线</p>
+            </div>
+
+            <h3>关键技术</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>碳储量反演</h4>
+                    <p>采用InVEST模型，基于10m分辨率土地利用数据和校正后的碳值表进行计算。碳密度校正考虑了年平均降水量和年均温的影响。</p>
+                </div>
+                <div class="card">
+                    <h4>驱动机制分析</h4>
+                    <p>运用Geodetector模型，量化NDVI(q=0.768)、DEM(q=0.666)、人口密度(q=0.641)等自然和人为因子对碳储量空间分异的解释力。</p>
+                </div>
+                <div class="card">
+                    <h4>情景模拟</h4>
+                    <p>构建了自然发展、经济发展和生态发展三种情景的土地利用转移矩阵，通过FLUS模型的ANN-CA模块进行预测，模拟精度达90%以上。</p>
+                </div>
+            </div>
+
+            <h3>技术流程</h3>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h4>实地调研阶段</h4>
+                        <p>通过问卷调查、SWOT分析和网络舆情调查获取基础数据</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h4>技术分析阶段</h4>
+                        <p>运用InVEST模型反演碳储量时空演变特征，结合FLUS-ANN-CA模型模拟未来情景</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h4>规划设计阶段</h4>
+                        <p>基于分析结果进行功能分区和碳汇产品开发设计</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h4>实施落地阶段</h4>
+                        <p>开发碳汇官网、WebGIS系统等成果，推动项目落地实施</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="results">
+            <h2>主要研究成果</h2>
+            <h3>碳储量时空演变特征</h3>
+            <p>研究发现2017-2023年间观音山社区土地利用格局发生显著变化，林地占比呈现波动上升趋势，畜牧草地从11.7%增至18.5%，而耕地从24.8%锐减至8.1%。碳储量分析显示，森林变化与碳储量变化呈现高度线性相关（R²=0.98），证实森林生态系统在区域碳汇中的核心作用。
+            </p>
+
+            <div class="img-container">
+                <img src="3.png" style="max-width:100%; margin:20px 0;">
+                <p class="img-caption">图3 2017~2023年社区土地利用格局演变</p>
+            </div>
+
+            <p>多情景模拟表明，生态发展情景碳储量密度最佳，为0.150吨/平方米，在平衡发展与保护方面最具优势。</p>
+
+            <h3>碳储量时空分异驱动机制</h3>
+            <p>观音山社区碳储量空间分异的驱动机制呈现出显著的“自然-人文”耦合特征，其核心驱动力可归因于植被生态系统的结构性参数与人类活动的协同作用。</p>
+            <div class="img-container">
+                <img src="4.png" style="max-width:100%; margin:20px 0;">
+                <p class="img-caption">图4 地理探测器驱动机制图</p>
+            </div>
+
+            <h3>2030年碳储量空间模拟</h3>
+            <p>模拟结果表明，不同发展情景对观音山社区的土地利用和碳储量空间格局产生了显著影响。在自然发展情景下，东北部的人类活动扩张受到限制，该区域的碳储量密度（0.149吨/平方米）相对较高；而在经济发展（0.148吨/平方米）和生态发展（0.150吨/平方米）情景下，中部的人类活动扩张受到约束，使得该区域的碳储量密度较自然发展情景有所提升。这一格局差异表明，区域碳储量的空间分布特征与人类活动管控强度密切相关，其中生态发展情景在平衡发展与保护方面展现出相对优势。社区需着重保护森林固碳能源，科学限制社区城镇化扩张对森林资源的影响。</p>
+            <div class="img-container">
+                <img src="5.png" style="max-width:100%; margin:20px 0;">
+                <p class="img-caption">图5 2030年碳储量空间模拟</p>
+            </div>
+
+            <h3>碳汇产品开发</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>碳票交易</h4>
+                    <p>建立区块链赋能的透明交易平台，实现社区森林碳汇市场化流转</p>
+                </div>
+                <div class="card">
+                    <h4>碳汇金融</h4>
+                    <p>开发抵押贷款、保险及银行产品，盘活碳资产并降低开发风险</p>
+                </div>
+                <div class="card">
+                    <h4>生态补偿</h4>
+                    <p>设立"观音山生态共富补偿基金"，推行"以碳代偿"机制</p>
+                </div>
+                <div class="card">
+                    <h4>碳汇银行</h4>
+                    <p>构建个人储碳账户和企业碳汇托管服务</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="design">
+            <h2>创新设计与实施</h2>
+            <h3>功能分区规划</h3>
+            <p>基于ArcGIS Pro空间分析和碳储量模拟结果，将社区科学划分为8个功能分区和10%-15%的规划留白区：</p>
+
+            <div class="img-container">
+                <img src="6.png" style="max-width:100%; margin:20px 0;">
+                <p class="img-caption">图6 社区规划功能分区</p>
+            </div>
+
+            <p>八个功能分区的景观设计概念图如下：</p>
+            <div class="img-container">
+                <img src="7.png" style="max-width:100%; margin:20px 0;">
+                <p class="img-caption">图7 功能分区景观设计</p>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h4>森林固碳体验步道区</h4>
+                    <p>铺设光伏步道和科普展示牌，增强人民对碳能源的认同感</p>
+                </div>
+                <div class="card">
+                    <h4>固碳志愿植树区</h4>
+                    <p>采用NFC芯片实现"一树一码"追踪，构建"种植-计量-兑换"闭环机制</p>
+                </div>
+                <div class="card">
+                    <h4>固碳效益体验度假区</h4>
+                    <p>融合夯土光伏建筑和碳足迹互动地砖，打造全链条低碳场景</p>
+                </div>
+                <div class="card">
+                    <h4>湿地固碳体验服务区</h4>
+                    <p>设置智能监测浮标和碳汇数据展示屏，构建低干预型湿地碳汇科教系统</p>
+                </div>
+            </div>
+
+            <h3>宣传模式创新</h3>
+            <p>构建"科技+体验"双轨宣传体系：</p>
+
+            <div class="img-container">
+                <img src="8.png" style="max-width:100%; margin:20px 0;">
+                <p class="img-caption">图8 "碳小C"虚拟形象设计</p>
+            </div>
+
+            <div class="img-container">
+                <img src="9.png" style="max-width:100%; margin:20px 0;">
+                <p class="img-caption">图9 "碳晓智"AI数字人开发初期测试</p>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h4>线上平台</h4>
+                    <p>开发社区碳汇宣传与交易平台官网，集成WebGIS空间可视化系统</p>
+                </div>
+                <div class="card">
+                    <h4>AI数字人</h4>
+                    <p>创新设计"碳晓智"AI数字人，提供智能问答服务</p>
+                </div>
+                <div class="card">
+                    <h4>虚拟形象</h4>
+                    <p>打造"碳小C"虚拟形象作为社区碳汇代言人</p>
+                </div>
+                <div class="card">
+                    <h4>线下体验</h4>
+                    <p>开发森林固碳步道、志愿植树活动等实体项目</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits">
+            <h2>预期效益与可行性</h2>
+            <h3>综合效益</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>经济效益</h4>
+                    <p>保守估算年收益560-870万元，其中碳汇交易平台25-40万元，碳汇银行30-50万元，固碳效益体验度假区200-300万元</p>
+                </div>
+                <div class="card">
+                    <h4>生态效益</h4>
+                    <p>预计年增固碳量2000吨以上，有效提升生态系统服务功能</p>
+                </div>
+                <div class="card">
+                    <h4>社会效益</h4>
+                    <p>问卷调查显示81.9%受访者支持碳汇经济发展，75.2%愿意参与相关活动</p>
+                </div>
+            </div>
+
+            <h3>可行性分析</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>技术可行性</h4>
+                    <p>采用InVEST、FLUS等成熟模型，精度验证可靠</p>
+                </div>
+                <div class="card">
+                    <h4>经济可行性</h4>
+                    <p>参考云南省红河州案例(1.15万吨交易额118.5万元)，保守估算投资回报周期合理</p>
+                </div>
+                <div class="card">
+                    <h4>政策可行性</h4>
+                    <p>符合国家《碳达峰碳中和标准计量体系建设行动方案》和云南省《深化集体林权制度改革实施方案》要求</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="team">
+            <h2>规划团队与合作方</h2>
+            <p>规划团队由云南师范大学地理学部的精英师生团队联合组成，具备扎实的学术背景与丰富的实践经验。</p>
+
+            <h3>核心成员</h3>
+            <div class="grid">
+                <div class="team-member">
+
+                    <h4>周泽同*</h4>
+                    <p>团队负责人</p>
+                    <p>邮箱：zhouzetong_rs@163.com</p>
+                    <p>遥感数据处理与碳汇计量、大数据分析与可视化、网站设计与开发</p>
+                </div>
+                <div class="team-member">
+
+                    <h4>沈思仪</h4>
+                    <p>地理信息系统（GIS）与空间分析建模、物联网与智慧系统集成</p>
+                </div>
+                <div class="team-member">
+
+                    <h4>王洁</h4>
+                    <p>经济效益分析与数据收集</p>
+                </div>
+                <div class="team-member">
+
+                    <h4>李珊</h4>
+                    <p>数字孪生与三维建模</p>
+                </div>
+                <div class="team-member">
+
+                    <h4>袁磊*</h4>
+                    <p>技术指导</p>
+                    <p>邮箱：827500747@qq.com</p>
+                    <p>国土空间规划设计及核心技术指导</p>
+                </div>
+            </div>
+
+            <h3>合作单位</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>云南师范大学地理学部</h4>
+                    <p>提供科研支持和技术指导</p>
+                </div>
+                <div class="card">
+                    <h4>云南省瀚哲科技有限公司</h4>
+                    <p>开发社区碳汇智能监管平台</p>
+                </div>
+                <div class="card">
+                    <h4>齐鲁工业大学（山东省科学院）</h4>
+                    <p>开发"碳晓智"AI数字人</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <h3>碳索观音山</h3>
+            <p>云南省观音山社区碳汇经济价值提升规划设计</p>
+            <p>编制单位：云南师范大学地理学部</p>
+            <p>通讯地址：云南省昆明市呈贡区吴家营街道聚贤街768号云南师范大学 650500</p>
+            <p>© 2025 碳索观音山项目组 版权所有</p>
+        </div>
+    </footer>
+</body>
+
+</html>
